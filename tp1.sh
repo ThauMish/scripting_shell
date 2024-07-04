@@ -8,4 +8,5 @@ then
         echo "Arg 2: ${2} -> ${#2} caractères"
 else
         echo "Veuillez recommencer en tapant 2 arguments"
+	exit 3
 fi

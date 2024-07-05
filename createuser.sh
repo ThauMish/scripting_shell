@@ -1,4 +1,8 @@
 #!/bin/bash
 #
-#
-useradd $1
+
+source library.sh
+
+fctDate
+fctLs
+fctVar "Je suis la variable 1"

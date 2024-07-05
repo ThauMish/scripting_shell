@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<script>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			if (
+				localStorage.theme === 'light' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)
+			) {
+				document.documentElement.classList.add('light');
+			} else if (localStorage.theme) {
+				localStorage.theme.split(' ').forEach((e) => {
+					document.documentElement.classList.add(e);
+				});
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
+
+		
+		<link rel="modulepreload" href="/_app/immutable/entry/start.e0e8cb0d.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/scheduler.f6668761.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons.e258ca65.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index.afef706d.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.1d16723a.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index.65c87b32.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_vhavht = {
+						base: "",
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.e0e8cb0d.js"),
+						import("/_app/immutable/entry/app.1d16723a.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
